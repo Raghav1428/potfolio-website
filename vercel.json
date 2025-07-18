@@ -1,9 +1,14 @@
 {
   "redirects": [
     {
-      "source": "/",
-      "has": [{ "type": "host", "value": "www.raghavseth.in" }],
-      "destination": "https://raghavseth.in",
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.raghavseth.in"
+        }
+      ],
+      "destination": "https://raghavseth.in/$1",
       "permanent": true
     }
   ]
