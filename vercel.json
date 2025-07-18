@@ -1,5 +1,10 @@
 {
-  "rewrites": [
-    { "source": "/(.*)", "destination": "/" }
+  "redirects": [
+    {
+      "source": "/",
+      "has": [{ "type": "host", "value": "www.raghavseth.in" }],
+      "destination": "https://raghavseth.in",
+      "permanent": true
+    }
   ]
 }
