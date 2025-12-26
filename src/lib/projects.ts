@@ -1,8 +1,15 @@
 export const projectList = [
     {
+      name: `Nodebase`,
+      users: '3 paid users',
+      description: 'An AI-powered automation platform for building and executing workflows with multiple integrations such as Cron, Google Forms, and Webhooks. It supports BYOK (Bring Your Own Key) to use different chat models, including Anthropic, OpenAI etc.',
+      link: 'https://nodebase.raghavseth.in',
+      gitlink: `https://github.com/Raghav1428/nodebase`
+    },
+    {
       name: `Benares Club's official chatbot`,
       users: '300+ users',
-      description: 'A WhatsApp chatbot for customers to report issues or provide suggestions to the club for improvement. It also enables users to add an image for better resolution of thier issue.',
+      description: 'A WhatsApp chatbot for customers to report issues or provide suggestions to the club for improvement. It also enables users to add an image for better resolution of their issue.',
       gitlink: `https://github.com/Raghav1428/Benares-Club-WA-ChatBot`
     },
     {

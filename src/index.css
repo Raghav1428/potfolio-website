@@ -62,14 +62,16 @@ html {
 }
 
 /* Button styling */
-button, a[role="button"] {
+button,
+a[role="button"] {
   border: 1px solid #4b5563;
   background-color: transparent;
   transition: all 0.2s ease;
   border-radius: 9999px;
 }
 
-button:hover, a[role="button"]:hover {
+button:hover,
+a[role="button"]:hover {
   background-color: rgba(31, 41, 55, 0.5);
   border-color: #6b7280;
 }
@@ -126,8 +128,6 @@ button:hover, a[role="button"]:hover {
     --ring: 216 12.2% 83.9%;
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
   }
 
@@ -139,4 +139,220 @@ button:hover, a[role="button"]:hover {
     background-color: hsl(var(--background));
     color: hsl(var(--foreground));
   }
+}
+
+/* Terminal Mode Styles */
+@keyframes flicker {
+  0% {
+    opacity: 0.02;
+  }
+
+  5% {
+    opacity: 0.05;
+  }
+
+  10% {
+    opacity: 0.02;
+  }
+
+  15% {
+    opacity: 0.06;
+  }
+
+  20% {
+    opacity: 0.02;
+  }
+
+  25% {
+    opacity: 0.02;
+  }
+
+  30% {
+    opacity: 0.02;
+  }
+
+  35% {
+    opacity: 0.01;
+  }
+
+  40% {
+    opacity: 0.02;
+  }
+
+  45% {
+    opacity: 0.02;
+  }
+
+  50% {
+    opacity: 0.02;
+  }
+
+  55% {
+    opacity: 0.05;
+  }
+
+  60% {
+    opacity: 0.02;
+  }
+
+  65% {
+    opacity: 0.04;
+  }
+
+  70% {
+    opacity: 0.02;
+  }
+
+  75% {
+    opacity: 0.02;
+  }
+
+  80% {
+    opacity: 0.02;
+  }
+
+  85% {
+    opacity: 0.04;
+  }
+
+  90% {
+    opacity: 0.02;
+  }
+
+  95% {
+    opacity: 0.06;
+  }
+
+  100% {
+    opacity: 0.02;
+  }
+}
+
+@keyframes blink {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+}
+
+.animate-flicker {
+  animation: flicker 4s infinite;
+}
+
+.animate-blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+
+  0%,
+  100% {
+    background-color: #00ff00;
+    color: #000000;
+  }
+
+  50% {
+    background-color: transparent;
+    color: #00ff00;
+  }
+}
+
+.animate-cursor-blink {
+  animation: cursor-blink 1.2s ease-in-out infinite;
+}
+
+.terminal-mode {
+  background-color: #000000 !important;
+  color: #00ff00 !important;
+  font-family: 'Space Mono', monospace;
+}
+
+.terminal-mode * {
+  border-color: #00ff00 !important;
+}
+
+.terminal-mode a {
+  color: #00ff00 !important;
+}
+
+
+.terminal-mode a:hover {
+  background-color: #00ff00;
+  color: #000000 !important;
+}
+
+/* Terminal Markdown Styles */
+.terminal-markdown {
+  font-family: 'Space Mono', monospace;
+  color: #00ff00;
+}
+
+.terminal-markdown h1,
+.terminal-markdown h2,
+.terminal-markdown h3,
+.terminal-markdown h4,
+.terminal-markdown h5,
+.terminal-markdown h6 {
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  border-bottom: 1px solid #00ff00;
+  display: inline-block;
+}
+
+.terminal-markdown p {
+  margin-bottom: 0.5rem;
+}
+
+.terminal-markdown ul {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  list-style: disc;
+}
+
+.terminal-markdown ol {
+  margin-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  list-style: decimal;
+}
+
+.terminal-markdown li {
+  margin-bottom: 0.25rem;
+}
+
+.terminal-markdown a {
+  color: #00ff00;
+  text-decoration: underline;
+}
+
+.terminal-markdown a:hover {
+  background-color: #00ff00;
+  color: #000000;
+}
+
+.terminal-markdown code {
+  background-color: rgba(0, 255, 0, 0.1);
+  padding: 0.1rem 0.3rem;
+  border-radius: 0.2rem;
+}
+
+.terminal-markdown pre {
+  background-color: rgba(0, 255, 0, 0.05);
+  padding: 0.5rem;
+  overflow-x: auto;
+  margin-bottom: 0.5rem;
+  border: 1px dashed #00ff00;
+}
+
+.terminal-markdown blockquote {
+  border-left: 2px solid #00ff00;
+  padding-left: 1rem;
+  margin-left: 0;
+  margin-bottom: 0.5rem;
+  opacity: 0.8;
 }

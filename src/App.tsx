@@ -7,6 +7,11 @@ import { projectList } from './lib/projects.ts';
 import { CardSpotlight } from './components/ui/card-spotlight.tsx';
 import { SplitText } from './components/ui/split-text.tsx';
 import profileImg from '../assets/1744746336984.jpg';
+import { TerminalToggle } from './components/TerminalToggle.tsx';
+import { TerminalEffect } from './components/TerminalEffect.tsx';
+import { InteractiveTerminal } from './components/InteractiveTerminal.tsx';
+import { useState } from 'react';
+
 
 // Animation variants
 const containerVariant = {
@@ -30,12 +35,25 @@ const fadeUpVariant = {
   },
 };
 
-const projects = projectList;
+const projects = projectList
 
 function App() {
+  const [isTerminalMode, setIsTerminalMode] = useState(false);
+
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white relative overflow-hidden">
+    <div className={`min-h-screen relative overflow-hidden transition-colors duration-300 ${isTerminalMode ? 'terminal-mode bg-black text-[#00ff00]' : 'bg-[#0a0a0a] text-white'}`}>
+      <TerminalToggle isTerminalMode={isTerminalMode} onToggle={() => setIsTerminalMode(!isTerminalMode)} />
+      
+      {isTerminalMode && <TerminalEffect />}
+      
+      {isTerminalMode ? (
+        <div className="relative z-10 pt-20">
+          <InteractiveTerminal onExit={() => setIsTerminalMode(false)} />
+        </div>
+      ) : (
+        <>
       <Spotlight />
+
 
       <div className="max-w-4xl mx-auto px-8 py-8 relative z-10">
         {/* Header Section */}
@@ -194,8 +212,11 @@ function App() {
           </motion.div>
         </motion.div>
       </div>
+        </>
+      )}
     </div>
   );
 }
+
 
 export default App;
