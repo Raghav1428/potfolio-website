@@ -21,7 +21,7 @@ export function TerminalToggle({ isTerminalMode, onToggle }: TerminalToggleProps
     >
       <div className="flex items-center gap-2 px-2">
         <Terminal size={20} />
-        <span className={`font-mono text-sm font-bold whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out opacity-100 max-w-[200px]`}>
+        <span className={`font-mono text-sm font-bold whitespace-nowrap overflow-hidden transition-all duration-300 ease-in-out hidden sm:block opacity-100 max-w-[200px]`}>
           {isTerminalMode ? 'EXIT_TERMINAL' : 'TERMINAL'}
         </span>
       </div>
