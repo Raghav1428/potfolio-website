@@ -1,5 +1,13 @@
 export const projectList = [
     {
+      name: `KnightCode`,
+      users: '140+ weekly downloads',
+      description: 'A local-first, bring-your-own-key AI coding CLI for your terminal. Built as a Turborepo monorepo with Bun, React, and Drizzle, it features an interactive developer interface, workspace file watching, and a local SQLite database.',
+      link: 'https://knightcode.raghavseth.in/',
+      gitlink: `https://github.com/KnightCodeAI/knightcode`,
+      npmlink: 'https://www.npmjs.com/package/@knightcodeai/cli'
+    },
+    {
       name: `Nodebase`,
       users: '3 paid users',
       description: 'An AI-powered automation platform for building and executing workflows with multiple integrations such as Cron, Google Forms, and Webhooks. It supports BYOK (Bring Your Own Key) to use different chat models, including Anthropic, OpenAI etc.',
