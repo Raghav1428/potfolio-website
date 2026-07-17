@@ -75,6 +75,7 @@ function App() {
                 <div>
                   <SplitText
                     text="Raghav Seth"
+                    as="h1"
                     className="text-2xl font-bold mb-1"
                     delay={100}
                     duration={0.9}

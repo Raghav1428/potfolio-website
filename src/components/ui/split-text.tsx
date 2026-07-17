@@ -7,6 +7,8 @@ gsap.registerPlugin(ScrollTrigger, GSAPSplitText);
 
 export interface SplitTextProps {
   text: string;
+  /** Rendered element; use "h1" for the page's main heading. */
+  as?: "p" | "h1" | "h2" | "h3";
   className?: string;
   delay?: number;
   duration?: number;
@@ -22,6 +24,7 @@ export interface SplitTextProps {
 
 export const SplitText: React.FC<SplitTextProps> = ({
   text,
+  as: Tag = "p",
   className = "",
   delay = 100,
   duration = 0.6,
@@ -34,7 +37,7 @@ export const SplitText: React.FC<SplitTextProps> = ({
   textAlign = "center",
   onLetterAnimationComplete,
 }) => {
-  const ref = useRef<HTMLParagraphElement>(null);
+  const ref = useRef<HTMLHeadingElement & HTMLParagraphElement>(null);
   const animationCompletedRef = useRef(false);
 
   useEffect(() => {
@@ -123,7 +126,7 @@ export const SplitText: React.FC<SplitTextProps> = ({
   ]);
 
   return (
-    <p
+    <Tag
       ref={ref}
       className={`split-parent ${className}`}
       style={{
@@ -135,6 +138,6 @@ export const SplitText: React.FC<SplitTextProps> = ({
       }}
     >
       {text}
-    </p>
+    </Tag>
   );
 };
